@@ -1,5 +1,4 @@
-import React from "react";
-import formatCurrency from "../../utils/helpers";
+// import formatCurrency from "../../utils/helpers.js";
 
 const CartItem = ({ item }) => {
   const { pizzaId, name, quantity, totalPrice } = item;
@@ -8,9 +7,7 @@ const CartItem = ({ item }) => {
       <p>
         {quantity}&times; {name}
       </p>
-      <div>
-        <p>{formatCurrency(totalPrice)}</p>
-      </div>
+      <div>{/* <p>{formatCurrency(totalPrice)}</p> */}</div>
     </li>
   );
 };
