@@ -9,51 +9,57 @@ import CreateOrder from "./features/order/CreateOrder";
 import Order from "./features/order/Order";
 import CreateUser from "./features/user/CreateUser";
 import Home from "./ui/Home";
+import AppLayout from "./ui/AppLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/menu",
-    element: <Menu />,
-  },
-  {
-    path: "/menuItem",
-    element: <MenuItem />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-  {
-    path: "/cartItem",
-    element: <CartItem />,
-  },
-  {
-    path: "/cartOverview",
-    element: <CartOverview />,
-  },
-  {
-    path: "/emptyCart",
-    element: <EmptyCart />,
-  },
-  {
-    path: "/order",
-    element: <Order />,
-  },
-  {
-    path: "/order/new",
-    element: <CreateOrder />,
-  },
-  {
-    path: "/order/:orderId",
-    element: <Order />,
-  },
-  {
-    path: "/user",
-    element: <CreateUser />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
+      },
+      {
+        path: "/menuItem",
+        element: <MenuItem />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/cartItem",
+        element: <CartItem />,
+      },
+      {
+        path: "/cartOverview",
+        element: <CartOverview />,
+      },
+      {
+        path: "/emptyCart",
+        element: <EmptyCart />,
+      },
+      {
+        path: "/order",
+        element: <Order />,
+      },
+      {
+        path: "/order/new",
+        element: <CreateOrder />,
+      },
+      {
+        path: "/order/:orderId",
+        element: <Order />,
+      },
+      {
+        path: "/user",
+        element: <CreateUser />,
+      },
+    ],
   },
 ]);
 function App() {
