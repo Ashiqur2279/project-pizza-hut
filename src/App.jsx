@@ -3,13 +3,13 @@ import Cart from "./features/cart/Cart";
 import CartItem from "./features/cart/CartItem";
 import CartOverview from "./features/cart/CartOverview";
 import EmptyCart from "./features/cart/EmptyCart";
-import Menu from "./features/menu/Menu";
-import MenuItem from "./features/menu/MenuItem";
+import Menu, { menuLoader } from "./features/menu/Menu";
+// import MenuItem from "./features/menu/MenuItem";
 import CreateOrder from "./features/order/CreateOrder";
 import Order from "./features/order/Order";
 import CreateUser from "./features/user/CreateUser";
-import Home from "./ui/Home";
 import AppLayout from "./ui/AppLayout";
+import Home from "./ui/Home";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +22,9 @@ const router = createBrowserRouter([
       {
         path: "/menu",
         element: <Menu />,
+        loader: menuLoader,
       },
-      {
-        path: "/menuItem",
-        element: <MenuItem />,
-      },
+
       {
         path: "/cart",
         element: <Cart />,
