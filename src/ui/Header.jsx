@@ -1,11 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import SearchOrder from "./SearchOrder";
 
 const Header = () => {
   return (
-    <div>
+    <header>
       <Link to="/">The Pizza Hut</Link>
-    </div>
+      <SearchOrder />
+    </header>
   );
 };
 
