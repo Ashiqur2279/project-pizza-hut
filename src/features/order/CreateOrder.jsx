@@ -1,4 +1,5 @@
-import React from "react";
+import { Form, redirect } from "react-router-dom";
+import { createOrder } from "../../services/apiRestaurants";
 
 const isValidPhone = (str) => {
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
@@ -33,9 +34,9 @@ const CreateOrder = () => {
   const cart = fakeCart;
   return (
     <div>
-      <h2>Ready to order? Let's go!</h2>
+      <h2>Ready to order? Let&apos;s go!</h2>
 
-      <form>
+      <Form method="POST">
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required />
@@ -63,11 +64,27 @@ const CreateOrder = () => {
           </label>
         </div>
         <div>
+          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button>Order Now</button>
         </div>
-      </form>
+      </Form>
     </div>
   );
+};
+
+export const createOrderAction = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  // console.log(data);
+  const orderData = {
+    ...data,
+    cart: JSON.parse(data.cart),
+    priority: data.priority === "on",
+  };
+  // console.log(orderData);
+  const newOrder = await createOrder(orderData);
+  console.log(newOrder);
+  return redirect(`/order/${newOrder.data.id}`);
 };
 
 export default CreateOrder;

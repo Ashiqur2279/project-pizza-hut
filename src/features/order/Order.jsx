@@ -64,6 +64,7 @@ const Order = () => {
         <div>
           {priority && <span>Priority</span>}
           <span>{status} order</span>
+          <p>Order Id: {id}</p>
         </div>
       </div>
 

@@ -5,7 +5,7 @@ import CartOverview from "./features/cart/CartOverview";
 import EmptyCart from "./features/cart/EmptyCart";
 import Menu, { menuLoader } from "./features/menu/Menu";
 // import MenuItem from "./features/menu/MenuItem";
-import CreateOrder from "./features/order/CreateOrder";
+import CreateOrder, { createOrderAction } from "./features/order/CreateOrder";
 import Order, { orderLoader } from "./features/order/Order";
 import CreateUser from "./features/user/CreateUser";
 import AppLayout from "./ui/AppLayout";
@@ -50,6 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/order/new",
         element: <CreateOrder />,
+        action: createOrderAction,
       },
       {
         path: "/order/:orderId",
