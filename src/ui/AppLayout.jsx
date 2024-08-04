@@ -9,6 +9,16 @@ const AppLayout = () => {
     const isLoading = navigate.state === "loading"
 
     return (
+        // <div className="grid h-screen grid-rows-[auto_1fr_auto_auto]">
+        //     <Header />
+        //     <div className="overflow-scroll">
+        //         <main className="mx-auto">
+        //             {isLoading ? <Loader /> : <Outlet />}
+        //         </main>
+        //     </div>
+        //     <CartOverview />
+        //     <Footer />
+        // </div>
         <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-grow">
