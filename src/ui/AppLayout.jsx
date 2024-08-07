@@ -9,23 +9,25 @@ const AppLayout = () => {
     const isLoading = navigate.state === "loading"
 
     return (
-        // <div className="grid h-screen grid-rows-[auto_1fr_auto_auto]">
+        // <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
         //     <Header />
-        //     <div className="overflow-scroll">
-        //         <main className="mx-auto">
-        //             {isLoading ? <Loader /> : <Outlet />}
-        //         </main>
+        //     <main className="overflow-auto">
+        //         {isLoading ? <Loader /> : <Outlet />}
+        //     </main>
+        //     <div className="grid grid-rows-2">
+        //         <CartOverview />
+        //         <Footer />
         //     </div>
-        //     <CartOverview />
-        //     <Footer />
         // </div>
         <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-grow">
+            <main className="scrollbar-thin scrollbar-thumb-gray-400 flex-grow overflow-auto">
                 {isLoading ? <Loader /> : <Outlet />}
             </main>
-            <CartOverview />
-            <Footer />
+            <div className="">
+                <CartOverview />
+                <Footer />
+            </div>
         </div>
     )
 }
