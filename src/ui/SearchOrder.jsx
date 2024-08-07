@@ -13,7 +13,7 @@ const SearchOrder = () => {
     }
     return (
         <div className="">
-            <form className="" onSubmit={handleSubmit}>
+            <form className="w-7 sm:w-full" onSubmit={handleSubmit}>
                 <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
                     <button className="absolute ml-3" type="submit">
                         <FaSearch className="size-5" />

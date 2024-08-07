@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import SearchOrder from "./SearchOrder"
+import SearchBar from "./SearchBar"
 
 const Header = () => {
     return (
@@ -7,7 +7,8 @@ const Header = () => {
             <Link className="text-4xl font-semibold" to="/">
                 The Pizza Hut
             </Link>
-            <SearchOrder />
+            {/* <SearchOrder /> */}
+            <SearchBar />
         </header>
     )
 }
