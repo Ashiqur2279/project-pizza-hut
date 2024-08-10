@@ -1,3 +1,4 @@
+import MyButton from "../../ui/MyButton"
 import { formatCurrency } from "../../utils/helpers"
 
 const CartItem = ({ item }) => {
@@ -15,9 +16,8 @@ const CartItem = ({ item }) => {
                     </p>
                 </div>
             </div>
-            <button className="text-md rounded-lg border-2 border-orange-500 bg-yellow-400 px-2 py-1 font-semibold tracking-wide transition-colors duration-300 hover:bg-yellow-500">
-                Delete
-            </button>
+
+            <MyButton type="small">Delete</MyButton>
         </li>
     )
 }

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import ButtonForward from "../../ui/ButtonForward"
+import MyButton from "../../ui/MyButton"
 
 const CartOverview = () => {
     return (
@@ -10,7 +10,7 @@ const CartOverview = () => {
             </p>
 
             <Link to="/cart">
-                <ButtonForward btn_data={"Open Cart"} />
+                <MyButton type="primary">Open Cart&rarr;</MyButton>
             </Link>
         </div>
     )

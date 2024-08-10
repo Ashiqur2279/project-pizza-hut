@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import ButtonForward from "../../ui/ButtonForward"
+import MyButton from "../../ui/MyButton"
 import CartItem from "./CartItem"
 
 const fakeCart = [
@@ -49,12 +49,11 @@ const Cart = () => {
             </ul>
 
             <div className="space-x-5">
-                <Link to="/order/new">
-                    <ButtonForward btn_data={"Order Pizzas"} />
-                </Link>
-                <button className="rounded-md border-2 border-orange-500 bg-transparent px-2 py-1 text-xl font-semibold tracking-wide transition-colors duration-300 hover:bg-red-400">
-                    Clear cart
-                </button>
+                <MyButton to="/order/new" type="primary">
+                    Order Pizzas
+                </MyButton>
+
+                <MyButton type="secondary">Clear Cart</MyButton>
             </div>
         </div>
     )
